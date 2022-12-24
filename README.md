@@ -1,5 +1,5 @@
 # word-bridge
-## based from the roblox game, [https://www.roblox.com/games/11169441681/Word-Bridge](Word Bridge)
+## based from the roblox game, [Word Bridge](https://www.roblox.com/games/11169441681/Word-Bridge).
 
 honestly, the idea feels like a party game, whether it be for socializing with friends in real life or not, because it's a simple content game idea. (the brightass look makes me even more emphasizing the reason why)
 
