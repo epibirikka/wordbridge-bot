@@ -96,7 +96,7 @@ class WordBridge(discord.Client):
 
         self.start_time = -1
 
-        self.goal = 10
+        self.goal = 55
     
     @tasks.loop(seconds=0.2)
     async def game_update(self):
