@@ -21,7 +21,7 @@ questions = [
     Question("A common general holiday?", "christmas", "halloween", "easter", "new year", "new year's day", "thanksgiving", ""),
     Question("A ball sport?", "baseball", "golf", "golfing", "basketball", "tennis", "badminton", "football", "soccer"),
     Question("A gaming genre?", "strategy", "rpg", "role playing game", "first person shooter", "fps", "platformer", "puzzle", "rhythm", "visual novel", "shooter", "simulation", 
-        "simulator", "fighting", "casino", "tower defense", "adventure"),
+        "simulator", "fighting", "casino", "tower defense", "adventure", "horror", "psychological horror", "strategy", "board"),
     Question("A big tech company?", "apple", "google", "microsoft", "meta", "facebook", "netflix", "activision", "valve", "tencent", "cisco", "amazon", "nvidia", "bytedance", \
             "samsung", "lg"),
     Question("An operating system?", "windows", "macintosh", "mac", "linux", "openbsd", "freebsd", "android", "chromeos", "unix"),

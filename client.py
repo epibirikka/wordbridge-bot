@@ -64,6 +64,8 @@ from enum import Enum
 from long import *
 from question import *
 
+from emoji import *
+
 class GameStartError(Enum):
     NOT_ENOUGH_PLAYERS = 1
     GAME_GOING = 2
@@ -78,7 +80,7 @@ class AnswerQualifiation(Enum):
     NOT_QUITE = 3
 
 required_players = 1
-viewport_size = 36
+viewport_size = 33
 
 class WordBridge(discord.Client):
     def __init__(self, **kwargs):
@@ -201,10 +203,10 @@ class WordBridge(discord.Client):
 
             clamp_x = self.goal-actual_viewport_size
             offset_x = min(max(bridge_len - (viewport_size//2), 0), clamp_x)
-            viewport = [":green_square:" for _ in range(actual_viewport_size)]
+            viewport = [b'\xf0\x9f\x9f\xa9'.decode("utf-8") for _ in range(actual_viewport_size)]
             
             for i, char in enumerate(sliced_bridge[offset_x:]):
-                viewport[i] = ":blue_square:" if char == " " else f":regional_indicator_{char}:"
+                viewport[i] = (ALPHABET.get(char) or "?")
 
             if offset_x >= clamp_x:
                 viewport[-1] = ":checkered_flag:"
@@ -212,6 +214,7 @@ class WordBridge(discord.Client):
                 viewport[-1] = ":arrow_right:"
 
                 i = -2
+
                 for number in list(str(int(self.goal-bridge_len)))[::-1]:
                     viewport[i] = (":" + str({
                             "1": "one",
@@ -230,8 +233,7 @@ class WordBridge(discord.Client):
 
             viewport[max(min(bridge_len-offset_x, viewport_size-1), 0)] = ":partying_face:" if bridge_len>=self.goal else ":person_standing:"
             
-
-            s += f"{player.user.name}#{player.user.discriminator}: {''.join(viewport)}\n"
+            s += f"{player.user.name}#{player.user.discriminator}: {' '.join(viewport)}\n"
 
         return s
 
